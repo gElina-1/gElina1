@@ -1,0 +1,552 @@
+/* Основные стили */
+:root {
+    --primary-color: #4e7bff;
+    --secondary-color: #08fdd8;
+    --dark-color: #0a0a1a;
+    --darker-color: #05050f;
+    --light-color: #ffffff;
+    --gray-color: #aaaaaa;
+    --card-bg: rgba(20, 20, 50, 0.7);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Шапка */
+.header {
+    background-color: rgba(10, 10, 30, 0.9);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.header.scrolled {
+    padding: 15px 0;
+    background-color: rgba(5, 5, 15, 0.95);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--light-color);
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.logo i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.logo span {
+    color: var(--primary-color);
+    margin-right: 5px;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav ul li {
+    margin-left: 30px;
+}
+
+.nav ul li a {
+    color: var(--light-color);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+    padding: 5px 0;
+}
+
+.nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.nav ul li a.active {
+    color: var(--primary-color);
+}
+
+.nav ul li a.active:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: all 0.3s;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.burger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--light-color);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Герой секция */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+    text-align: center;
+    background: linear-gradient(rgba(10, 10, 30, 0.7), rgba(5, 5, 15, 0.9)), url('../img/backgrounds/hero-bg.jpg') no-repeat center center/cover;
+}
+
+.hero-title {
+    font-size: clamp(36px, 5vw, 64px);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.hero-text {
+    font-size: clamp(18px, 2vw, 22px);
+    margin-bottom: 30px;
+    max-width: 700px;
+    position: relative;
+    z-index: 2;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--gray-color);
+}
+
+.btn-explore {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+    padding: 15px 40px;
+    font-size: 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.btn-explore i {
+    margin-left: 10px;
+    transition: transform 0.3s;
+}
+
+.btn-explore:hover {
+    background-color: #3a6bff;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.btn-explore:hover i {
+    transform: translateX(5px);
+}
+
+.btn-explore:active {
+    transform: translateY(-2px);
+}
+
+/* Секции */
+.section-title {
+    text-align: center;
+    font-size: clamp(28px, 3vw, 42px);
+    margin-bottom: 60px;
+    position: relative;
+    font-weight: 700;
+    padding-top: 30px;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+}
+
+/* Быстрые ссылки */
+.quick-links {
+    padding: 100px 0;
+    position: relative;
+    z-index: 2;
+    background-color: var(--darker-color);
+}
+
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.link-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.5s;
+    text-decoration: none;
+    color: var(--light-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.link-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: var(--primary-color);
+}
+
+.link-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.link-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.link-card:hover .link-image img {
+    transform: scale(1.1);
+}
+
+.link-content {
+    padding: 20px;
+}
+
+.link-content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.link-content p {
+    color: var(--gray-color);
+    font-size: 14px;
+}
+
+/* Новости */
+.news {
+    padding: 100px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.news-slider {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.news-item {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.5s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.news-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.news-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.news-item:hover .news-image img {
+    transform: scale(1.1);
+}
+
+.news-content {
+    padding: 20px;
+}
+
+.news-content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.news-content p {
+    color: var(--gray-color);
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.read-more {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.read-more i {
+    margin-left: 8px;
+    transition: transform 0.3s;
+}
+
+.read-more:hover {
+    color: var(--secondary-color);
+}
+
+.read-more:hover i {
+    transform: translateX(5px);
+}
+
+/* Подвал */
+.footer {
+    background-color: var(--darker-color);
+    padding: 80px 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.footer-col p, .footer-col ul li {
+    margin-bottom: 15px;
+    color: var(--gray-color);
+    font-size: 14px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li a {
+    color: var(--gray-color);
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+    padding: 3px 0;
+    font-size: 14px;
+}
+
+.footer-col ul li a:hover {
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.footer-col i {
+    margin-right: 10px;
+    color: var(--secondary-color);
+    width: 20px;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    color: var(--gray-color);
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    transform: translateY(-5px);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--gray-color);
+    font-size: 14px;
+}
+
+/* Анимации */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(78, 123, 255, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(78, 123, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(78, 123, 255, 0);
+    }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+.float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .nav ul li {
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        height: 100vh;
+        background-color: var(--darker-color);
+        transition: all 0.5s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(20px);
+    }
+
+    .nav.active {
+        left: 0;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .nav ul li {
+        margin: 15px 0;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .burger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .burger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .hero {
+        text-align: center;
+    }
+
+    .links-grid, .news-slider {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 24px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    .btn-explore {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+}

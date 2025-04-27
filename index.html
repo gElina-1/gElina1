@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cosmic Explorer - Исследуйте Вселенную</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div id="particles-js"></div>
+
+  <header class="header">
+    <div class="container">
+      <div class="logo" id="logo">
+        <i class="fas fa-rocket"></i>
+        <span>Cosmic</span>Explorer
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html" class="active">Главная</a></li>
+          <li><a href="solar-system.html">Солнечная система</a></li>
+          <li><a href="galaxies.html">Галактики</a></li>
+          <li><a href="missions.html">Миссии</a></li>
+          <li><a href="telescopes.html">Телескопы</a></li>
+        </ul>
+      </nav>
+      <div class="burger" id="burger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">Откройте тайны <span id="typing-text"></span></h1>
+      <p class="hero-text">Исследуйте Вселенную через интерактивные модели и анимации</p>
+      <a href="solar-system.html" class="btn-explore pulse">Начать путешествие <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <section class="quick-links">
+    <div class="container">
+      <h2 class="section-title">Быстрый доступ</h2>
+      <div class="links-grid">
+
+        <a href="solar-system.html" class="link-card hover-effect">
+          <div class="link-image">
+            <img src="https://cdn-icons-png.flaticon.com/512/4392/4392761.png" alt="Солнечная система">
+          </div>
+          <div class="link-content">
+            <h3>Солнечная система</h3>
+            <p>Наш космический дом</p>
+          </div>
+        </a>
+
+        <a href="galaxies.html" class="link-card hover-effect">
+          <div class="link-image">
+            <img src="https://cdn-icons-png.flaticon.com/512/3039/3039387.png" alt="Галактики">
+          </div>
+          <div class="link-content">
+            <h3>Галактики</h3>
+            <p>Огромные звездные системы</p>
+          </div>
+        </a>
+
+        <a href="missions.html" class="link-card hover-effect">
+          <div class="link-image">
+            <img src="https://cdn-icons-png.flaticon.com/512/4290/4290817.png" alt="Космические миссии">
+          </div>
+          <div class="link-content">
+            <h3>Космические миссии</h3>
+            <p>История освоения космоса</p>
+          </div>
+        </a>
+
+        <a href="telescopes.html" class="link-card hover-effect">
+          <div class="link-image">
+            <img src="https://cdn-icons-png.flaticon.com/512/4322/4322991.png" alt="Телескопы">
+          </div>
+          <div class="link-content">
+            <h3>Телескопы</h3>
+            <p>Окна во Вселенную</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Cosmic Explorer</h3>
+          <p>Исследуйте Вселенную с нами</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Разделы</h3>
+          <ul>
+            <li><a href="solar-system.html">Солнечная система</a></li>
+            <li><a href="galaxies.html">Галактики</a></li>
+            <li><a href="missions.html">Миссии</a></li>
+            <li><a href="telescopes.html">Телескопы</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
